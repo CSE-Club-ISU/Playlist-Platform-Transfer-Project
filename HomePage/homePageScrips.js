@@ -6,4 +6,6 @@ function goToNewYT(){
 
 function goToNewSpot(){
     // redirect to YT to Spotify
+    console.log("clicked goToNewSpot");
+    window.location.replace(); // I do not know how to relocate to a webpage in a different folder
 }
