@@ -3,33 +3,49 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+/**
+ * This page is a landing area for users and can be 
+ * @author LucasAHorn
+ */
 function App() {
-  const [count, setCount] = useState(0)
+  const [playlistUrl, setUrl] = useState('');
+
+  /**
+   * This function will redirect the user to the spotify login
+   * Then create the new playlist if token is valid **use rand to make the playlist name different every time**
+   * Then hopefully scrape the artist name and song name and find the closest match
+   * 
+   */
+  function YoutubeToSpotify(){
+    
+  }
+
+  /**
+   * This will be implimented later
+   * This will be the 
+   */
+  function SpotifyToYoutube(){
+    console.log('yup');
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='LandingArea'>
+        <h1>Playlist Transfer Project</h1>
+        <p>This website can transfer a public playlist to another platform</p>
+        <p>currently functional: NONE</p>
+        <div>
+          <form>
+            <p>Public playlist url: <input type="text" id="playlistUrl" name="playlistUrl" onChange={event => setUrl(event.target.value)}></input></p>
+            <button type='submit' onClick={YoutubeToSpotify()}>Youtube to Spotify</button>
+            <button type='submit' onClick={SpotifyToYoutube()}>Youtube to Spotify</button>
+          </form>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div display='none'>
+        
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
-
 export default App
